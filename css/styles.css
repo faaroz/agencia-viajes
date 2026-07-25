@@ -1,0 +1,330 @@
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    background-color: darkolivegreen;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+
+}
+
+
+header h1 {
+
+    margin: 0;
+    font-size: 2.2rem;
+
+}
+
+
+header p {
+
+    margin-top: 8px;
+    opacity: 0.9;
+    font-size: 1.05rem;
+
+}
+
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+main {
+
+    width: 85%;
+    margin: 20px auto;
+
+}
+
+
+
+/* =========================
+   FIELDSETS
+========================= */
+
+fieldset {
+
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+
+legend {
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #556b2f;
+    padding: 0 10px;
+
+}
+
+
+
+/* =========================
+   FORMULARIOS COMPACTOS
+========================= */
+
+form {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: end;
+    width: 100%;
+
+}
+
+
+.campo {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 0 0 auto;
+
+}
+
+
+.campo label {
+
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+
+.campo input,
+.campo select {
+
+    width: 160px;
+    padding: 8px;
+    
+}
+
+#id_vuelo,
+#id_hotel,
+#correo,
+#telefono {
+
+    width: 220px;
+
+}
+
+
+input,
+select {
+
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.3s;
+
+}
+
+
+input:focus,
+select:focus {
+
+    outline: none;
+    border-color: #556b2f;
+    box-shadow: 0 0 5px rgba(85,107,47,0.3);
+
+}
+
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+
+    padding: 12px 18px;
+    background-color: #556b2f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    white-space: nowrap;
+
+}
+
+
+button:hover {
+
+    background-color: #6b8e23;
+
+}
+
+
+form button {
+
+    height: 40px;
+
+}
+
+
+
+/* =========================
+   BOTONES CONSULTAS
+========================= */
+
+.botones-consulta {
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+
+}
+
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.success {
+
+    background-color: #e8f5e3;
+    border-left: 6px solid #556b2f;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #2f4f1f;
+    font-weight: bold;
+
+}
+
+
+.error {
+
+    background-color: #fde8e8;
+    border-left: 6px solid #c0392b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #922b21;
+    font-weight: bold;
+
+}
+
+
+
+/* =========================
+   TABLAS MYSQL
+========================= */
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+
+}
+
+
+table th {
+
+    background-color: #556b2f;
+    color: white;
+    padding: 12px;
+    text-align: left;
+
+}
+
+
+table td {
+
+    padding: 12px;
+    border: 1px solid #dddddd;
+
+}
+
+
+table tr:nth-child(even) {
+
+    background-color: #f5f8ef;
+
+}
+
+
+table tr:hover {
+
+    background-color: #eef4df;
+
+}
+
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+h2 {
+
+    color: #415a0f;
+
+}
+
+
+h3 {
+
+    color: #556b2f;
+
+}
+
+
+
+p {
+
+    line-height: 1.5;
+
+}
+
+
+
+/* =========================
+   ENLACES
+========================= */
+
+a {
+
+    color: #556b2f;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+a:hover {
+
+    text-decoration: underline;
+
+}
