@@ -225,6 +225,23 @@ $hoteles = $conn->query(
 
                 <div class="campo">
 
+                    <label for="cantidad_personas">
+
+                        Cantidad de personas
+
+                    </label>
+
+                    <input
+                        type="number"
+                        name="cantidad_personas"
+                        id="cantidad_personas"
+                        min="1"
+                        value="1">
+
+                </div>
+
+                <div class="campo">
+
                     <label>Fecha de reserva</label>
                     <input type="date" name="fecha_reserva" id="fecha_reserva" value="<?= date('Y-m-d') ?>">
 
