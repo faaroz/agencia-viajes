@@ -9,12 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idVuelo = intval($_POST["id_vuelo"]);
     $idHotel = intval($_POST["id_hotel"]);
 
-    $fechaReserva = date("Y-m-d");
+    $fechaReserva = $_POST["fecha_reserva"];
 
 
     if (
         $idCliente <= 0 ||
         $cantidadPersonas <= 0||
+        empty($fechaReserva) ||
         $idVuelo <= 0 ||
         $idHotel <= 0
     ) {
@@ -43,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Error al registrar reserva</h2>
 
             <p>
-                Debe seleccionar un cliente, indicar la cantidad de personas, un vuelo y un hotel.
+                Debe seleccionar un cliente, indicar la cantidad de personas, la fecha de reserva, un vuelo y un hotel.
             </p>
 
             <a href='../index.php'>
