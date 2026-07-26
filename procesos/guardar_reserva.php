@@ -5,6 +5,7 @@ require_once "../conexion.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $idCliente = intval($_POST["id_cliente"]);
+    $cantidadPersonas = intval($_POST["cantidad_personas"]);
     $idVuelo = intval($_POST["id_vuelo"]);
     $idHotel = intval($_POST["id_hotel"]);
 
@@ -13,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (
         $idCliente <= 0 ||
+        $cantidadPersonas <= 0||
         $idVuelo <= 0 ||
         $idHotel <= 0
     ) {
@@ -41,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Error al registrar reserva</h2>
 
             <p>
-                Debe seleccionar un cliente, un vuelo y un hotel.
+                Debe seleccionar un cliente, indicar la cantidad de personas, un vuelo y un hotel.
             </p>
 
             <a href='../index.php'>
@@ -63,16 +65,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $sql = "INSERT INTO reserva
-            (id_cliente, fecha_reserva, id_vuelo, id_hotel)
+            (id_cliente, cantidad_personas, fecha_reserva, id_vuelo, id_hotel)
             VALUES
-            (?, ?, ?, ?)";
+            (?, ?, ?, ?, ?)";
 
 
     $stmt = $conn->prepare($sql);
 
     $stmt->bind_param(
-        "isii",
+        "iisii",
         $idCliente,
+        $cantidadPersonas,
         $fechaReserva,
         $idVuelo,
         $idHotel
@@ -127,6 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <tr>
                 <th>ID Reserva</th>
                 <th>ID Cliente</th>
+                <th>Personas</th>
                 <th>Fecha</th>
                 <th>ID Vuelo</th>
                 <th>ID Hotel</th>
@@ -140,6 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     <td>{$fila["id_reserva"]}</td>
                     <td>{$fila["id_cliente"]}</td>
+                    <td>{$fila["cantidad_personas"]}</td>
                     <td>{$fila["fecha_reserva"]}</td>
                     <td>{$fila["id_vuelo"]}</td>
                     <td>{$fila["id_hotel"]}</td>
