@@ -91,18 +91,27 @@ function validarHotel() {
 function validarReserva() {
 
     const cliente = document.getElementById("id_cliente").value;
+    const cantidadPersonas = document.getElementById("cantidad_personas").value;
     const fecha = document.getElementById("fecha_reserva").value;
     const vuelo = document.getElementById("id_vuelo").value;
     const hotel = document.getElementById("id_hotel").value;
 
     if (
         cliente === "" ||
+        cantidadPersonas === "" ||
         fecha === "" ||
         vuelo === "" ||
         hotel === ""
     ) {
 
         alert("Debe completar todos los datos de la reserva.");
+        return false;
+
+    }
+
+    if (Number(cantidadPersonas) <= 0) {
+
+        alert("La cantidad de personas debe ser mayor que cero.");
         return false;
 
     }

@@ -5,6 +5,7 @@ class Reserva
 
     public $idReserva;
     public $idCliente;
+    public $cantidadPersonas;
     public $fechaReserva;
     public $idVuelo;
     public $idHotel;
@@ -14,6 +15,7 @@ class Reserva
     public function __construct(
         $idReserva,
         $idCliente,
+        $cantidadPersonas,
         $fechaReserva,
         $idVuelo,
         $idHotel
@@ -21,6 +23,7 @@ class Reserva
 
         $this->idReserva = $idReserva;
         $this->idCliente = $idCliente;
+        $this->cantidadPersonas = $cantidadPersonas;
         $this->fechaReserva = $fechaReserva;
         $this->idVuelo = $idVuelo;
         $this->idHotel = $idHotel;
@@ -39,6 +42,8 @@ class Reserva
             <h3>Reserva Nº {$this->idReserva}</h3>
 
             <p><strong>Cliente:</strong> {$this->idCliente}</p>
+
+            <p><strong>Cantidad de personas:</strong> {$this->cantidadPersonas}</p>
 
             <p><strong>Fecha de reserva:</strong> {$this->fechaReserva}</p>
 
